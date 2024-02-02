@@ -1,0 +1,52 @@
+{* second tier suggestions *}
+<div 
+    class="uk-height-1-1 uk-child-width-1-6@m uk-grid-small" uk-grid="masonry: false" 
+    uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 325; repeat: false;">
+    
+    {* exclude this page's parent's children *}
+    {var $currentCat = $page->parent->children}
+    
+    {foreach $pages->get('zones')->find("children.count=0, id!=$currentCat")->shuffle()->slice(0, 6) as $item}
+
+        <div class="uk-card uk-margin-small-bottom">
+            
+            {* release image *}    
+            <a href="{$item->url}" alt="">
+                <div 
+                    class="uk-card-media-top uk-cover-container uk-background-cover"
+                    style="background-image: url('{$item->featured_image->first->url}'); border-radius: 20px;">
+                        <canvas width="1200" height="1200"></canvas>
+                </div>
+            </a>
+            
+            {* date *}
+            {* <div class="uk-padding-small uk-text-muted">
+                {$item->date|replace(' 00:00:00', '')}
+            </div> *}
+
+            {* title *}
+            <div class="uk-margin-small-top">
+                <a class="removeTextDecoration" href="{$item->url}" alt="">
+                    <div class="uk-padding-small">
+                        <span class="uk-text-default" style="word-wrap:break-word;">
+                            {$item->title|upper|noescape}
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            {* body area *}
+            
+            {* categories *}
+            <div class="uk-padding-small uk-padding-remove-top" style="margin-left: -5px;">
+                {foreach $item->categories->slice(0, 2) as $cat}
+                    <span style="position:relative;top:-2.8px;" uk-icon="icon: hashtag; ratio: 1"></span>
+                    <a class="uk-text-emphasis uk-button uk-button-text uk-text-small" href="{$cat->url}">{$cat->title}</a>
+                {/foreach}
+            </div>
+
+        </div>
+        
+    {/foreach}
+
+</div>

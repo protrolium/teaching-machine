@@ -1,8 +1,85 @@
 <footer>
+  <div uk-grid>
+    
+    <div class="uk-width-1-2@m">
+      <div class="uk-padding uk-padding-remove-bottom">
+        <span class="uk-heading-small">Platforms</span>
+        <span class="uk-text-small uk-text-muted uk-margin-small-left">Centralized</span>
+      </div>
+      
+      <div class="uk-padding uk-padding-remove-top" uk-grid>
+        {foreach $pages->get('social')->children() as $social}
+          <div class="uk-margin-remove-top">
+            <a 
+              class="noUnderline uk-text-large uk-text-secondary uk-margin-medium uk-margin-remove-bottom noExternalSVG" 
+              href="{$social->link}" target="_blank">
+                {$social->title}
+            </a>
+          </div>
+        {/foreach}
+      </div>
+    </div>
+    
+    <div class="uk-width-1-2@m">
+      <div class="uk-padding uk-padding-remove-bottom">
+        <span class="uk-heading-small">Networks</span>
+        <span class="uk-text-small uk-text-muted uk-margin-small-left">Decentralized</span>
+      </div>
+
+      <div class="uk-padding uk-padding-remove-top" uk-grid>
+        {foreach $pages->get('network')->children() as $network}
+          <div class="uk-margin-medium uk-margin-remove-bottom uk-margin-remove-top">
+            <a class="noUnderline uk-text-large uk-text-secondary noExternalSVG" href="">{$network->title}</a>
+          </div>
+        {/foreach}
+      </div>
+    </div>
+
+  </div>
+
+
   <div class="uk-padding">
-    <div>
-      The Teaching Machine
+    
+    {* mobile *}
+    <div class="uk-text-small uk-hidden@m">
+      <div>
+        <span style="font-weight: 200;">
+          &copy; 2011—{$datetime->date('Y')}<br>
+          <span style="font-weight: 400">The Teaching Machine</span>, 
+          an independent arts laboratory.
+        </span>
+      </div>
+
+      <div>
+        <span style="font-weight: 200;">
+          Operating from Los Angeles • Barcelona • Singapore<br>
+          Our logo is designed by 
+          <a class="noUnderline noExternalSVG uk-text-secondary" href="https://twitter.com/KIATSG" target="_blank">
+            <span style="font-weight: 400;">Kiat</span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    {* desktop *}
+    <div class="uk-visible@m">
+      <span style="font-weight: 200;">
+        &copy; 2011—{$datetime->date('Y')}, 
+        <span style="font-weight: 400">The Teaching Machine</span>, 
+        an independent arts laboratory.
+      </span>
+      
+      <div>
+        <span style="font-weight: 200;">
+          Operating from Los Angeles • Barcelona • Singapore<br>
+          Our logo is designed by 
+          <a class="noUnderline noExternalSVG uk-text-secondary" href="https://twitter.com/KIATSG" target="_blank">
+            <span style="font-weight: 400;">Kiat</span>
+          </a>
+        </span>
+      </div>
     </div>
   </div>
+  
 
 </footer>

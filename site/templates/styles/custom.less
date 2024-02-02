@@ -14,6 +14,7 @@
 :root[data-theme="theme-light"] {
     --primary-color: #0072a3;
     --text-color: #333333;
+    --a-color: #667482;
     --bg-color: #fafafa;
     --component-bg-color: #ffffff;
     --uk-text-secondary: #222222;
@@ -26,6 +27,7 @@
 }:root[data-theme="theme-dark"] {
     --primary-color: #49afd9;
     --text-color: #e3f5fc;
+    --a-color: #f8f9fa;
     --bg-color: #090d0f;
     --component-bg-color: #22343c;
     --uk-text-secondary: #e3f5fc;
@@ -39,6 +41,7 @@
 
 html {
     font-family: 'Oswald', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 300;
     color: var(--text-color);
     transition: color 0.3s ease, color 0.3s ease;
 }
@@ -46,6 +49,17 @@ html {
 body {
     background-color: var(--bg-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+em {
+    color: var(--uk-text-color);
+}
+
+blockquote {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    border-left: 4px solid var(--a-color);
+    padding-left: 30px;
 }
   
 // .component {
@@ -61,6 +75,10 @@ body {
 .uk-text-emphasis {
     color: var(--uk-text-emphasis) !important;
   }
+
+.uk-overlay-primary {
+    background: rgba(34, 34, 34, 0.7)
+}
 
 h1,
 .uk-h1,
@@ -96,8 +114,8 @@ h6,
     font-family: 'Silkscreen', monospace;
 }
 
-.uk-background-red {
-    background-color: #f01e1e;
+.background-dark {
+    background-color: var(--bg-color);
 }
 
 //navbar
@@ -124,6 +142,16 @@ h6,
     padding-bottom: 5px;
 }
 
+a {
+    color: var(--a-color);
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+a.noUnderline {
+    text-decoration: none;
+}
+
 // display external link icons
 a[href^="http"]::after,
 a[href^="https://"]::after
@@ -141,6 +169,16 @@ a[href^="https://"]::after
   display: inline-block;
 }
 
+a:hover, .uk-link:hover, .uk-link-toggle:hover .uk-link {
+    color: var(--a-color);
+    // background-color: #5523e2;
+    text-decoration: none;
+}
+
+.noHover:hover, .uk-link:hover, .uk-link-toggle:hover .uk-link {
+    color: var(--text-color);
+}
+
 // don't display external link icon after images or svgs
 a:has(> img, svg)::after,
 .project-image > a::after {
@@ -152,20 +190,39 @@ a.noExternalSVG::after {
     display: none !important;
 }
 
-// search engine
-:focus-visible {
-    border-radius: 3rem;
+.video-container {
+	position: relative;
+	padding-bottom: 57%;
+	padding-top: 35px;
+	height: 0;
+    overflow: hidden;
 }
 
-#se-results {
-    background-color: var(--component-bg-color);
-    position: absolute;
-    padding: 1em 3em 0 3em;
-    border-radius: 3rem;
-    z-index: 1000;
+.video-container iframe {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 #featured-image-bg.lazyLoad {
     background-image: none !important;
     background-color: var(--bg-color);
+ }
+
+ .hover-icon {
+    display: none;
+ }
+
+ #hover:hover .hover-icon {
+    display: inline-block;
+ }
+
+ .text-light {
+    color: #e3f5fc;
+ }
+
+ .uk-button-text {
+    vertical-align: text-top;
  }

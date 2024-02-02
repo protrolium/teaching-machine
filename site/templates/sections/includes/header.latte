@@ -1,5 +1,7 @@
-<header class="uk-width-1-1">
-    <div class="uk-animation-slide-right-medium" uk-sticky="sel-target: .uk-navbar-container; start: 500; animation: uk-animation-fade; show-on-up: true;">
+<header class="uk-width-1-1 uk-position-absolute">
+    <div 
+        class="uk-animation-slide-right-medium" 
+        uk-sticky="sel-target: .uk-navbar-container; start: 500; animation: uk-animation-fade; show-on-up: true;">
 
         {* mobile nav *}
         <nav 
@@ -41,66 +43,86 @@
         
         {* desktop nav *}
         
-        <nav class="uk-navbar-container uk-visible@m" uk-navbar>
+        <nav class="uk-navbar-container uk-navbar-transparent uk-visible@m" uk-navbar>
             
             <div class="uk-navbar-left">
-
                 <div 
                     class="uk-padding-small uk-padding-remove-right" 
-                    style="width: 75px;">
-                    <a class="uk-text-secondary uk-icon" href="{$pages->get('/')->url}">
-                        {$pages->get('name=tm-logo, template=image')->markup|noescape}
+                    style="width: 200px;">
+                    <a class="uk-icon noHover" href="{$pages->get('/')->url}">
+                        {$pages->get('name=tm-logo-text-header, template=image')->markup|noescape}
                     </a>
                 </div>
                 
-                <p class="uk-flex" style="align-items:center;">
-                    <a class="uk-heading-small uk-text-secondary uk-margin-remove-bottom" href="{$pages->get('/')->url}" alt="">
+                {* <p class="uk-flex" style="align-items:center;">
+                    <a class="uk-text-large uk-text-secondary uk-margin-remove-bottom" href="{$pages->get('/')->url}" alt="">
                         {$page->title}
                     </a>
-                </p>
-            </div>
-
-            <div class="uk-navbar-right uk-padding-small">
-
-                <ul class="uk-navbar-nav">
-
-                    {* add home + children pages to navItems *}
-                    {var $navItems = new \ProcessWire\PageArray()}
-                    {* {do $navItems->add($home)} *}
-                    
-                    {foreach $home->children() as $children}
-                        {do $navItems->add($children)}
-                    {/foreach}
-                    
-                    {* build the menu *}
-                    {foreach $navItems as $item}
-                        <li n:class="$rockfrontend->isActive($item) ? uk-active" style="padding-top: 5px;">
-                            {if $item == $home}
-                                <a href="{$item->url}">Home</span></a>
-                            {else}
-                                <a href="{$item->url}">{$item->title}</span></a>
-                            {/if}
-                        </li>
-                    {/foreach}
-                </ul>
-
-                <div style="margin-top: 3px;">
-                    <button id="dark-mode-btn-desktop" class="theme-toggle uk-text-large" onclick="toggleTheme()">
-                        <span>🌖</span>
-                    </button>
-                </div>
-            
+                </p> *}
             </div>
 
         </nav>
+        
+    </div>
+    
+    {* fixed menu top right *}
+    <div 
+        class="uk-overlay uk-position-fixed uk-padding-small uk-flex uk-flex-row-reverse uk-animation-slide-right-medium uk-animation-fade background-dark uk-visible@m" 
+        style="top: 0; right: 0; writing-mode: vertical-lr; z-index: 999; border-bottom-left-radius: 15px;">
+
+        <ul class="uk-navbar-nav">
+            
+            <li>
+                <div id="menuContainer">
+                    <button 
+                        id="header-nav-desktop" 
+                        class="hamburger-nav"
+                        style="color: #fff;" 
+                        uk-toggle="target: #menu" 
+                        type="button">
+                            <span uk-icon="icon: menu; ratio: 1.5;"></span>
+                    </button>
+                </div>
+            </li>
+
+            <li>
+                <div style="margin-top: 3px;">
+                    <button id="dark-mode-btn-desktop" class="theme-toggle uk-text-large"  onclick="toggleTheme()">
+                        <span>🌖</span>
+                    </button>
+                </div>
+            </li>
+            
+            {* add home + children pages to navItems *}
+            {var $navItems = new \ProcessWire\PageArray()}
+            {do $navItems->add($home)}
+            
+            {foreach $home->children() as $children}
+                {do $navItems->add($children)}
+            {/foreach}
+            
+            {* build the menu *}
+            {foreach $navItems as $item}
+                <li n:class="$rockfrontend->isActive($item) ? uk-active" 
+                    style="display: flex; justify-content: center; padding-top: 5px;">
+                        {if $item == $home}
+                            <a href="{$item->url}">Home</span></a>
+                        {else}
+                            <a href="{$item->url}">{$item->title}</span></a>
+                        {/if}
+                </li>
+            {/foreach}
+
+        </ul>
+
     </div>
 
     <!-- This is the off-canvas menu -->
-    <div class="uk-width-1-1 uk-animation-fade uk-animation-fast" id="menu" uk-offcanvas>
+    <div class="background-dark uk-width-1-1 uk-animation-fade uk-animation-fast" id="menu" uk-offcanvas>
         
         <button id="closeBtn" class="uk-close-large uk-offcanvas-close clickable" type="button" aria-label="Close" uk-close></button>
         
-        <div class="uk-offcanvas-container uk-flex uk-width-1-1 uk-height-viewport uk-flex-center uk-hidden@m">
+        <div class="uk-offcanvas-container uk-flex uk-width-1-1 uk-height-viewport uk-flex-center">
             <nav class="offcanvas-mobile uk-flex-column uk-margin-auto-vertical" uk-navbar>
 
                 {* build the menu *}
@@ -108,14 +130,15 @@
                     <li n:class="$rockfrontend->isActive($item) ? uk-active, uk-text-large, offcanvas-mobile, uk-margin-small-bottom" 
                         style="list-style:none;">
                         {if $item == $home}
-                            <a href="{$item->url}">Home</span></a>
+                            <a class="uk-text-secondary" href="{$item->url}">Home</span></a>
                         {* {elseif $item->name == "wiki"}
-                            <a class="noExternalSVG" href="https://wiki.spiritbomb.ai" target="_blank">{$item->title}</span></a> *}
+                            <a class="noExternalSVG" href="" target="_blank">{$item->title}</span></a> *}
                         {else}
                             <a class="uk-text-secondary" href="{$item->url}">{$item->title}</span></a>
                         {/if}
                     </li>
                 {/foreach}
+
             </nav>
         </div>
 

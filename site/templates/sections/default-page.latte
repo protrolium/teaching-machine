@@ -1,1 +1,163 @@
-this is the default-page.latte
+<section>
+    <div class="uk-width-1-1">
+        
+        {* featured image *}
+        <div class="uk-card">
+                <div
+                    class="uk-height-viewport uk-cover-container uk-background-cover uk-background"
+                    style="background-image: url('{$page->featured_image->first->url}');">
+                        <canvas width="900" height="900"></canvas>
+                </div>
+                <div class="uk-overlay-primary uk-position-cover"></div>
+        </div>
+
+        {* title overlay *}
+        <div class="uk-overlay uk-position-bottom uk-padding-small uk-animation-fade">
+                
+                {* categories *}
+                <div 
+                    class="uk-padding-small uk-padding-remove-top uk-padding-remove-bottom" 
+                    style="position: relative; z-index:900;">
+
+                    {foreach $page->categories as $category}
+                        <a class="noUnderline" href="{$category->url}" alt="">
+                            <button class="uk-button uk-button-default uk-button-small button-hover">
+                                <span class="text-light">{$category->title}</span>
+                                <span class="text-light hover-icon" uk-icon="icon: arrow-right; ratio: 1"></span>
+                            </button>
+                        </a>
+                    {/foreach}
+                </div>
+
+                {* title *}
+                <div class="">
+                        <div class="uk-padding-small">
+                            <span class="uk-heading-2xlarge text-light" style="word-wrap:break-word;">
+                                {$page->title|upper|noescape}
+                            </span>
+                        </div>
+                </div>
+        </div>
+    
+    </div>
+
+    {* main body mobile *}
+    <div>
+        <div class="uk-padding uk-width-2-3@m uk-hidden@m">
+            {* date *}
+                <div class="uk-padding-small uk-padding-remove-left uk-padding-remove-top">
+                    <span class="uk-text-default uk-text-muted text-light">
+                        <span uk-icon="icon: calendar; ratio: 1.7"></span> &nbsp;
+                        <span style="vertical-align: bottom;">{$page->post_date}</span>
+                    </span>
+                </div>
+
+            <span class="uk-text-default">
+                {$page->body|noescape}
+            </span>
+            
+            {* embed *}
+            {if $page??->embed_code}
+                <div class="video-container uk-margin-top uk-margin-auto-left">
+                    {$page->embed_code|noescape}
+                </div>
+            {/if}
+        </div>
+
+        {* gallery *}
+        <div class="uk-width-1-1 uk-hidden@m">
+            {if $page->gallery->count > 1}
+                <div class="uk-margin-auto-left">
+                    {$rockfrontend->render("/sections/includes/gallery.latte")}
+                </div>
+            {else}
+                {if $page->gallery->count == 1}
+                    <div class="uk-margin-top">
+                        <img src="{$page->gallery->first->url}" alt="{$page->gallery->first->title}" uk-img>
+                    </div>
+                {/if}
+            {/if}
+        </div>
+    </div>
+
+    {* main body desktop *}
+    <div class="uk-child-width-expand" uk-grid>
+        
+        <div class="uk-width-2-3 uk-padding uk-margin-xlarge-left uk-visible@m">
+            {* date *}
+            <div class="uk-padding-small uk-padding-remove-left uk-padding-remove-top">
+                <span class="uk-text-large uk-text-muted text-light">
+                    <span uk-icon="icon: calendar; ratio: 1.7"></span> &nbsp;
+                    <span style="vertical-align: bottom;">{$page->post_date}</span>
+                </span>
+            </div>
+
+            <div class="uk-text-large">
+                {$page->body|noescape}
+            </div>
+            
+            {* video embed *}
+            {if $page??->video_embed_1}
+                <div class="video-container uk-margin-top">
+                    {$page->video_embed_1|noescape}
+                </div>
+                {if $page??->video_embed_2}
+                    <div class="video-container uk-margin-top">
+                        {$page->video_embed_2|noescape}
+                    </div>
+                {/if}
+            {/if}
+            
+            {* audio embed *}
+            {if $page??->audio_embed_1}
+                <div class="uk-margin-large-top">
+                    {$page->audio_embed_1|noescape}
+                </div>
+            {/if}
+        </div>
+
+        {* gallery *}
+        {if $page->gallery->count > 1}
+            <div class="uk-visible@m">
+                <div class="uk-padding uk-padding-remove-left">
+                    {$rockfrontend->render("/sections/includes/gallery.latte")}
+                </div>
+            </div>
+        {else}
+            <div class="uk-width-1-1">
+                {if $page->gallery->count == 1}
+                    <div class="uk-width-2-3 uk-margin-xlarge-left uk-margin-bottom uk-visible@m">
+                        <img src="{$page->gallery->first->url}" alt="{$page->gallery->first->title}" uk-img>
+                    </div>
+                {/if}
+            </div>
+        {/if}
+
+    </div>
+
+    {* more label items *}
+    {if $page->parent()->children()->count > 1}
+        <div class="uk-padding uk-animation-fade">
+            <div class="font-bold" style="font-size:3vw;">
+                <h1 class="uk-text-muted uk-heading-line">
+                    <span>📁 <span class="uk-text-secondary">{$page->parent->title|upper}</span> related</span>
+                </h1>
+            </div>
+            <div>
+                {$rockfrontend->render("/sections/includes/more-items.latte")}
+            </div>
+        </div>
+    {/if}
+
+    <div class="uk-padding uk-animation-fade uk-visible@m">
+        <div class="font-bold" style="font-size:3vw;">
+            <h1 class="uk-text-muted uk-heading-line">
+                <span>🪼 all other <span class="uk-text-secondary">ZONES</span>
+            </h1>
+        </div>
+        <div>
+            {$rockfrontend->render("/sections/includes/site-wide-items.latte")}
+        </div>
+    </div>
+
+</section>
