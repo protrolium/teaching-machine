@@ -35,7 +35,7 @@
             uk-grid="masonry: false;" 
             uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 275; repeat: false;">
             
-            {var $mixtape = $pages->find("categories=av-oddities")}
+            {var $mixtape = $pages->find("categories=av-oddities|mixtape")}
             {var $items = $page->find("children.count=0, sort=-post_date, template=default-page, id!=$mixtape")->shuffle()->slice(0, 12)}
             {foreach $items as $item}
                 <div id="hover" class="uk-card">

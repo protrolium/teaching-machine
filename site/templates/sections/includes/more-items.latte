@@ -37,8 +37,10 @@
             {* categories *}
             <div class="uk-padding-small uk-padding-remove-top" style="margin-left: -5px;">
                 {foreach $item->categories->slice(0, 4) as $cat}
-                    <span style="position:relative;top:-2.8px;" uk-icon="icon: hashtag; ratio: 1"></span>
-                    <a class="uk-text-emphasis uk-button uk-button-text uk-text-small" href="{$cat->url}">{$cat->title}</a>
+                    <span style="white-space: nowrap;">
+                        <span style="position:relative;top:-2.8px;" uk-icon="icon: hashtag; ratio: 1"></span>
+                        <a class="uk-text-emphasis uk-button uk-button-text uk-text-small" href="{$cat->url}">{$cat->title}</a>
+                    </span>
                 {/foreach}
             </div>
 
