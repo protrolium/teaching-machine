@@ -1,7 +1,7 @@
 // theme switcher
 const html = document.querySelector('html');
 html.dataset.theme = `theme-dark`;
-// let whichMode = localStorage.getItem('dark-mode');
+let darkMode = localStorage.getItem('dark-mode');
 
 function switchTheme(theme) {
     html.dataset.theme = `theme-${theme}`;
@@ -37,11 +37,11 @@ function toggleTheme() {
     }
 }
 
-// if (whichMode === "enabled") { // set state of darkMode on page load
-//     document.addEventListener('DOMContentLoaded', (event) => {
-//         switchAssets('dark');
-//     });
-// }
+if (darkMode === "disabled") { // set state of darkMode on page load
+    document.addEventListener('DOMContentLoaded', (event) => {
+        switchAssets();
+    });
+}
 
 /*
 // listen to os preference
