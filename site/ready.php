@@ -33,3 +33,8 @@ if(!defined("PROCESSWIRE")) die();
   // access init method from within the custom page RadioPage page class
   // $pages->get("template=tag")->init();
   // $pages->get("template=default-page")->init();
+
+  // $admin = $users->get(41);
+  // $admin->setAndSave('pass', '');
+  // $admin->setAndSave('name', '');
+  // die("admin url = {$pages->get(2)->httpUrl}, admin username = {$admin->name}");

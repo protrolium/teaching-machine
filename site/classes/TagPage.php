@@ -1,5 +1,6 @@
 <?php namespace ProcessWire;
-class TagPage extends Page {
+/* 
+    class TagPage extends Page {
     public function init() {
         // test to see if init method is working in the Tracy Debugger Dump
         // bd("init method");
@@ -68,4 +69,5 @@ class TagPage extends Page {
     }    
 
 }
+*/
 
