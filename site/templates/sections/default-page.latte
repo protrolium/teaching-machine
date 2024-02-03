@@ -137,8 +137,8 @@
 
     {* more label items *}
     {if $page->parent()->children()->count > 1}
-        <div class="uk-padding uk-animation-fade">
-            <div class="font-bold" style="font-size:3vw;">
+        <div class="uk-padding" uk-scrollspy="cls: uk-animation-fade; target: #more-items-fade; delay: 200; repeat: false;">
+            <div id="more-items-fade" class="font-bold" style="font-size:3vw;">
                 <h1 class="uk-text-muted uk-heading-line">
                     <span>📁 <span class="uk-text-secondary">{$page->parent->title|upper}</span> related</span>
                 </h1>
@@ -149,8 +149,8 @@
         </div>
     {/if}
 
-    <div class="uk-padding uk-animation-fade uk-visible@m">
-        <div class="font-bold" style="font-size:3vw;">
+    <div class="uk-padding uk-visible@m" uk-scrollspy="cls: uk-animation-fade; target: #site-wide-items-fade; delay: 200; repeat: false;">
+        <div id="site-wide-items-fade" class="font-bold" style="font-size:3vw;">
             <h1 class="uk-text-muted uk-heading-line">
                 <span>🪼 all other <span class="uk-text-secondary">ZONES</span>
             </h1>

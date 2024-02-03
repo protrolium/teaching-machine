@@ -1,7 +1,7 @@
 {* articles index desktop *}
 <div 
     class="uk-height-1-1 uk-child-width-1-4@m uk-grid-small" uk-grid="masonry: false" 
-    uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 550; repeat: false;">
+    uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 300; repeat: false;">
     
     {foreach $page->parent()->children()->not($page->id)->shuffle()->slice(0, 4) as $item}
 
