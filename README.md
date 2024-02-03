@@ -1,185 +1,127 @@
-# Welcome to ProcessWire 3.x 
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="45pt" height="45pt" viewBox="0 0 300.000000 300.000000"
+ preserveAspectRatio="xMidYMid meet">
+<g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" stroke="none">
+<path d="M1330 2528 c-95 -150 -176 -276 -179 -280 -4 -4 -103 14 -221 41
+-118 27 -229 52 -246 55 l-31 7 53 -233 c30 -128 54 -240 54 -248 0 -14 -38
+-40 -397 -266 l-163 -102 280 -178 c154 -98 280 -183 280 -189 0 -5 -24 -117
+-53 -247 -51 -226 -52 -237 -33 -233 166 39 470 104 473 101 5 -4 193 -299
+293 -458 34 -54 63 -98 64 -98 2 0 33 48 70 108 96 154 276 436 284 444 4 4
+115 -17 247 -47 132 -29 242 -52 244 -50 2 3 -20 107 -48 232 -28 125 -51 235
+-51 244 0 10 105 82 275 190 151 96 275 176 275 179 0 3 -124 83 -275 179
+-179 113 -275 180 -275 191 0 20 99 461 106 472 3 4 3 8 0 8 -4 0 -409 -90
+-473 -105 -23 -5 -9 -26 -243 345 -68 107 -126 199 -130 203 -4 4 -85 -115
+-180 -265z m341 -46 l157 -247 -110 -26 c-109 -26 -111 -27 -163 -82 l-52 -56
+-56 57 c-55 56 -60 58 -161 82 l-105 25 161 253 c88 139 163 250 166 247 3 -3
+77 -117 163 -253z m-757 -222 c98 -22 187 -40 197 -40 25 0 24 -1 -11 -53 -28
+-42 -30 -51 -30 -136 l0 -91 -91 0 c-85 0 -93 -2 -136 -31 -46 -32 -62 -29
+-63 11 0 8 -18 96 -40 194 -22 98 -40 183 -40 188 0 5 8 7 18 4 9 -3 98 -24
+196 -46z m1396 44 c0 -12 -92 -419 -96 -423 -2 -2 -24 11 -50 28 -44 29 -54
+31 -136 31 l-88 0 0 91 c0 84 -2 93 -30 134 -36 52 -36 55 -7 55 12 1 105 20
+207 44 216 51 200 48 200 40z m-1028 -125 c93 -21 99 -24 148 -74 l52 -53 -61
+-58 c-55 -53 -61 -63 -61 -99 l0 -39 -43 42 -43 42 -87 0 -87 0 0 86 c0 79 2
+89 30 130 17 24 36 44 43 44 7 0 56 -10 109 -21z m598 -26 c27 -43 30 -56 30
+-130 l0 -83 -92 0 -93 0 -34 -40 c-42 -48 -55 -51 -46 -9 7 29 2 37 -56 95
+l-64 64 53 53 c48 48 59 54 140 73 127 31 127 31 162 -23z m-270 -280 c0 -50
+-3 -56 -49 -103 -27 -27 -53 -50 -57 -50 -5 0 -32 23 -61 52 -48 48 -53 56
+-53 97 0 42 5 50 57 103 l57 58 53 -52 c51 -50 53 -55 53 -105z m-540 -60 l0
+-97 43 -38 42 -37 -45 -1 c-42 0 -49 -4 -101 -59 l-57 -59 -52 53 c-51 52 -53
+57 -77 160 -13 59 -22 109 -21 110 2 1 26 16 53 34 45 28 58 31 133 31 l82 0
+0 -97z m242 50 l48 -47 0 -88 0 -88 -82 0 -82 0 -48 47 -48 47 0 88 0 88 82 0
+82 0 48 -47z m598 -40 l0 -87 -47 -48 -47 -48 -86 0 -85 0 2 87 2 86 47 49 48
+48 83 0 83 0 0 -87z m244 55 c28 -17 52 -32 53 -33 1 -1 -9 -50 -22 -110 -24
+-106 -26 -111 -77 -162 l-52 -53 -61 60 c-53 53 -65 60 -100 60 l-39 0 42 43
+42 43 0 92 0 92 82 0 c74 0 86 -3 132 -32z m-1363 -139 c10 -40 18 -83 19 -94
+0 -11 27 -47 61 -81 l61 -62 -57 -55 c-57 -55 -58 -56 -80 -159 -14 -67 -27
+-102 -34 -100 -22 5 -491 307 -488 314 3 11 481 316 491 314 5 -1 17 -36 27
+-77z m1707 -80 c133 -85 242 -156 242 -159 0 -5 -475 -309 -495 -316 -6 -3
+-19 38 -33 98 -21 101 -23 103 -79 160 l-57 58 57 58 c56 57 58 59 79 160 14
+60 27 101 33 98 6 -2 120 -73 253 -157z m-1008 -48 l0 -75 -50 49 -50 49 0 75
+0 75 50 -49 50 -49 0 -75z m122 85 c-3 -72 -4 -74 -48 -117 l-44 -43 0 74 c0
+74 0 75 42 117 23 24 45 43 48 43 3 0 4 -33 2 -74z m-376 -141 l53 -54 -57
+-55 c-52 -51 -61 -56 -102 -56 -42 0 -50 4 -100 55 l-54 55 54 55 c51 52 57
+55 104 55 46 0 52 -3 102 -55z m181 13 c24 -23 43 -45 43 -48 0 -3 -33 -4 -74
+-2 -72 3 -74 4 -117 48 l-43 44 74 0 c74 0 75 0 117 -42z m324 -2 c-43 -44
+-45 -45 -117 -48 -41 -2 -74 -1 -74 2 0 2 19 24 42 47 l42 43 75 0 75 0 -43
+-44z m239 -11 l54 -55 -54 -55 c-52 -52 -57 -55 -105 -55 -48 0 -53 3 -105 55
+l-54 55 54 55 c52 52 57 55 105 55 48 0 53 -3 105 -55z m-456 -68 c-8 -21 -28
+-22 -44 -2 -11 13 -10 18 6 30 15 11 22 11 32 1 7 -7 10 -20 6 -29z m-64 -4
+c0 -4 -19 -27 -42 -50 l-42 -43 -75 0 -75 0 44 45 c41 42 46 44 109 48 36 2
+69 4 74 5 4 1 7 -1 7 -5z m280 -49 l45 -44 -75 0 c-74 0 -74 0 -117 42 -24 23
+-43 45 -43 48 0 3 33 4 73 2 70 -4 73 -5 117 -48z m-625 -74 l39 0 -42 -36
+-42 -36 0 -99 0 -99 -82 0 c-84 0 -80 -2 -186 66 -1 1 8 50 21 109 24 104 26
+108 78 161 l53 54 61 -60 c53 -53 65 -60 100 -60z m1065 -74 c11 -50 22 -100
+25 -111 3 -15 -9 -27 -50 -52 -48 -30 -60 -33 -134 -33 l-81 0 0 92 0 92 -42
+43 -42 43 40 0 c35 0 46 7 99 60 l59 60 53 -52 c49 -49 53 -57 73 -142z m-732
+-13 c-23 -23 -46 -43 -50 -43 -4 0 -8 30 -8 67 0 67 0 68 48 116 l47 48 3 -72
+3 -72 -43 -44z m164 31 c2 -41 1 -74 -2 -74 -3 0 -25 19 -48 43 -42 42 -42 43
+-42 117 l0 74 44 -43 c44 -43 45 -45 48 -117z m-252 -31 l0 -87 -47 -48 -47
+-48 -83 0 -83 0 0 87 0 87 47 48 47 48 83 0 83 0 0 -87z m502 40 l48 -47 0
+-88 0 -88 -83 0 -83 0 -48 49 -49 49 -1 86 -1 86 85 0 84 0 48 -47z m-252
+-184 c0 -51 -2 -56 -52 -106 l-52 -53 -58 57 c-54 53 -58 61 -58 102 0 42 5
+50 57 103 l56 57 54 -53 c51 -52 53 -56 53 -107z m-187 -116 l61 -63 -52 -53
+c-52 -53 -56 -54 -155 -76 -56 -11 -105 -21 -109 -21 -4 0 -21 20 -38 44 -28
+41 -30 51 -30 130 l0 86 88 0 88 0 39 41 40 40 3 -33 c2 -25 18 -48 65 -95z
+m268 87 l34 -40 93 0 92 0 0 -82 c0 -74 -3 -86 -31 -130 -17 -26 -34 -48 -38
+-48 -3 0 -52 10 -108 21 -99 22 -103 23 -155 76 l-52 53 63 64 c58 58 63 66
+56 95 -9 42 4 39 46 -9z m-843 -10 c45 -27 57 -30 136 -30 l86 0 0 -91 c0 -85
+2 -94 30 -135 20 -31 26 -46 17 -49 -6 -2 -57 -14 -112 -25 -205 -44 -280 -60
+-296 -65 -12 -4 -6 34 33 207 26 117 48 214 48 216 0 6 13 0 58 -28z m1416
+-181 c25 -117 45 -213 44 -214 -2 -2 -88 17 -193 41 -104 24 -200 43 -212 44
+-13 0 -23 2 -23 5 0 2 14 26 30 52 27 43 30 54 30 135 l0 88 88 0 c80 0 91 3
+132 30 25 16 48 30 51 30 3 0 27 -95 53 -211z m-540 -119 l103 -25 -161 -252
+c-88 -139 -164 -249 -168 -245 -3 4 -76 117 -161 252 -127 200 -152 246 -139
+251 9 3 56 14 104 24 84 17 88 20 144 76 l58 59 58 -57 c57 -56 61 -59 162
+-83z"/>
+</g>
+</svg>
 
-This document is in Markdown. An HTML formatted version of this document 
-can be read at: https://github.com/processwire/processwire/blob/master/README.md
+# The Teaching Machine ProcessWire
+
+A new studio portfolio built using the ProcessWire CMF
 
 
 ## Table of Contents
 
-1. [About](#about-processwire)
-2. [Installation](#installing-processwire)
-3. [Upgrading](#upgrading-processwire)
-4. [Troubleshooting](https://processwire.com/docs/start/install/troubleshooting/)
-5. [Support](#support-and-links)
+1. [Site Structure](#site-structure)
 
 
-## About ProcessWire
+## Site Structure
 
-ProcessWire is a friendly and powerful open source CMS with an API that is a 
-joy to use at any scale. It is both a content management system (CMS) and 
-framework (CMF) built to save you time and work the way you do. With all custom 
-fields, a secure foundation, proven scalability and performance, ProcessWire 
-connects all of your content seamlessly, making your job fast, easy and fun.
-
-ProcessWire gives you more control over your fields, templates and markup than 
-other platforms, while ProcessWire’s API makes working with your content easy and 
-enjoyable. Managing and developing a site in ProcessWire is shockingly simple 
-compared to what you may be used to.
-
-ProcessWire is widely trusted by web professionals for its exceptional consistency, 
-stability and security; revered by web developers for its API that saves time and 
-makes work fun; valued by web designers for its adaptability and flexibility with 
-modern website/application content management needs; and loved by clients for its 
-no-nonsense interface and ease-of-use in adding, updating and maintaining content. 
-New versions of ProcessWire are released just about every week on the
-development branch. 
-
-
-### Background
-
-ProcessWire is a timeless tool for web professionals that has always been 
-committed to the long term. It started in 2003, gained the name ProcessWire
-in 2006, and has been in active development as an open source project since 2010. 
-Now more than a decade later (2023), we’re just getting started, as ProcessWire 
-continues to grow and develop into the next 10 years and beyond. 
-
-While ProcessWire has been around for a long time, don’t feel bad if you haven’t 
-heard of it till today. We are fundamentally different from other projects in 
-that we don’t make a lot of noise, we’re not into promotion, we value quality 
-over quantity, sustainability over growth, and a friendly community over 
-popularity. ProcessWire is designed to be a silent partner, not easily 
-identified from the front-end of any website. We don’t aim to be big, we are 
-instead focused on being best-in-class. 
-
-Web developers find ProcessWire when the time is right, after they’ve tried 
-some other platforms. And once they start using ProcessWire, they tend to 
-stay. ProcessWire is addictive, easy to maintain for the long term, and doesn’t
-have the security and upgrade woes of other platforms. But don’t take our word 
-for it; unless your livelihood depends on some other platform, find out for 
-yourself. 
-
-
-### Community
-
-ProcessWire is more than just software, it is also a friendly community
-of web professionals dedicated to building great sites and applications, and 
-helping others do so too. 
-
-Please visit and join our 
-[friendly community](https://processwire.com/talk/)
-in the ProcessWire forums, subscribe to our
-[weekly newsletter](https://processwire.com/community/newsletter/subscribe/)
-for the latest ProcessWire news, check out our
-[website showcase](https://processwire.com/sites/)
-to see what others are building with ProcessWire, and read our 
-[blog](https://processwire.com/blog/) 
-to stay up-to-date with the latest ProcessWire versions.
-
-Weekly ProcessWire news is posted by Teppo Koivula on his site 
-[ProcessWire Weekly](https://weekly.pw). 
-Weekly core updates and related topics are posted by Ryan Cramer in the 
-ProcessWire support forum 
-[News and Announcements](https://processwire.com/talk/forum/7-news-amp-announcements/) 
-board. 
-
-### Learn more 
-
-* [ProcessWire website](https://processwire.com)
-* [About ProcessWire](https://processwire.com/about/)
-* [Support forums](https://processwire.com/talk/)
-* [Documentation](https://processwire.com/docs/)
-* [API reference](https://processwire.com/api/ref/)
-* [Downloads](https://processwire.com/download/)
-* [Modules/plugins](https://processwire.com/modules/)
-* [Showcase](https://processwire.com/sites/)
-
------------------------------------------------------------------
-
-## Installing ProcessWire
-
-Simply extract the ProcessWire files to an http accessible location and
-load the URL in your web browser. This will start the installer. See our
-[Installation Guide](https://processwire.com/docs/start/install/new/) for more 
-details and instructions. If you run into any trouble, please see our 
-[Troubleshooting Guide](https://processwire.com/docs/start/install/troubleshooting/). 
-
-
-## Upgrading ProcessWire
-
-Upgrading is easy and usually just a matter of replacing your `/wire/` directory
-with the one from the new version. But to be safe, before proceeding with any version upgrade, please see the
-[Upgrading ProcessWire](https://processwire.com/docs/start/install/upgrade/)
-guide and perhaps keep it open during your upgrade in case you need to refer back to it. 
-
-When upgrading from one 3.x version to another, please use the 
-[general upgrade process](https://processwire.com/docs/start/install/upgrade/#general-upgrade-process).
-This consists primarily of making sure you've got everything backed up and then just 
-replacing your `/wire/` directory with the one from the newer version.
-
-- If you are upgrading from a 3.x version prior to 3.0.135 then please also follow 
-  [these instructions](https://processwire.com/docs/start/install/upgrade/from-3.x/). 
-
-- If you are upgrading from any 2.x version then please see 
-  [upgrading from ProcessWire 2.x](https://processwire.com/docs/start/install/upgrade/from-2.x/).
-
-- If you run into any trouble upgrading, please see our 
-  [troubleshooting upgrades guide](https://processwire.com/docs/start/install/troubleshooting/#troubleshooting-upgrades).
-
-
-### Pro module version upgrade notes (if applicable)
-
-- [FormBuilder](https://processwire.com/store/form-builder/)
-  version 0.4.0 or newer required, 0.5.2 or newer recommended.
-- [ListerPro](https://processwire.com/store/lister-pro/)
-  version 1.0.9 or newer required, 1.1.4 or newer recommended. 
-- [ProFields](https://processwire.com/store/pro-fields/)
-  the latest versions of all ProFields (10 modules) are recommended.
-- [LoginRegisterPro](https://processwire.com/store/login-register-pro/)
-  all versions supported but version 5 or newer recommended.   
-- [ProCache](https://processwire.com/store/pro-cache/)
-  version 3.1.4 or newer required, 4.0.0 or newer recommended.
-  After upgrading, go to your ProCache settings in the admin (Setup > ProCache)
-  and see if it suggests any modifications to your .htaccess file.
-- For all other Pro modules not mentioned above (ProMailer, ProDrafts, 
-  ProDevTools, Likes) there are no specific version requirements but we 
-  recommend using the latest available versions when possible.
-
-## Debug Mode
-
-Debug mode causes all errors to be reported to the screen. This can be
-helpful during development or troubleshooting. When in the admin, it also
-enables a “Debug” link (see footer) for reporting of extra information in a 
-panel. Debug mode is not intended for live or production sites, as the 
-information reported is for the developer only. Do not leave debug mode 
-on for any live/production sites, as it could be a security concern. However, 
-we think you'll find it very handy during development or when resolving issues. 
-
-1. Edit this file: `/site/config.php`
-2. Find this line: `$config->debug = false;` 
-3. Change the `false` to `true`, like below, and save. 
+We are using the RockFrontEnd module to control templates, which are written in the LATTE php template engine. The structure of pages and templates is roughly as follows:
 
 ```
-$config->debug = true; 
+root
+└── site
+    └── assets
+        ├── classes
+        │   ├── DefaultPage.php
+        │   └── HomePage.php
+        ├── templates
+        │   ├── home.php
+        │   ├── default-page.php
+        │   ├── tag.php
+        │   ├── tags.php
+        │   └── (etc)
+        └── layouts
+            ├── home.php
+            ├── default.php (main rockfrontend renderer)
+            └── sections
+                ├── about.latte
+                ├── default-page.latte
+                ├── home.latte
+                ├── tag.latte
+                └── (etc)
 ```
 
-This can be found near the bottom of the file, or you can add it if not
-already there. It will make PHP and ProcessWire report all errors, warnings,
-notices, etc. Of course, you'll want to set it back to false once you've 
-resolved any issues. 
+### Templates & Layouts
+
+The action happens in the `templates` directory. Here we create any number of `php` pages and include the ProcessWire namespace in them, otherwise they are essentially empty pages acting as containers. In the `layouts` directory are stored any number of layouts, `default.php` being our main RockFrontEnd page renderer. This page will pull from the `sections` directory to render a template based on a page's assigned template in ProcessWire. Thus if we add a new template in ProcessWire (i.e. concert-visuals) and assign pages to it, we will need to add that page to the `templates` directory when we try pulling in its corresponding `latte` files from the `sections` directory via `default.php`. 
+
+The page classes correspond to the pages in the `layout` directory, only in lowercase and without the word 'Page'. These custom classes extend ProcessWire Page classes, and the names must match. 
 
 
-## Support and Links
+## Links
 
-* [ProcessWire Support Forums](https://processwire.com/talk/)
-* [ProcessWire Weekly News](https://weekly.pw/)
-* [ProcessWire Blog](https://processwire.com/blog/)
-* [Sites running ProcessWire](https://processwire.com/sites/)
-* [Subscribe to ProcessWire Weekly email](https://processwire.com/community/newsletter/subscribe/)
-* [Submit your site to our directory](https://processwire.com/sites/submit/)
-* [Follow @processwire on Twitter](http://twitter.com/processwire/)
-* [Contact ProcessWire](https://processwire.com/contact/)
-
-------
-
-Copyright 2023 by Ryan Cramer / Ryan Cramer Design, LLC
+* [The Teaching Machine](https://teachingmachine.tv)
 
