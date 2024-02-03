@@ -18,9 +18,12 @@
             </div>
 
             <p class="uk-flex uk-margin-small-left" style="align-items:center;">
-                <a class="uk-text-default uk-text-secondary" href="{$pages->get('/')->url}" alt="">
-                    {$page->title|upper}
-                </a>
+                {* if on home, display the title, else not *}
+                {if $page->id == 1}
+                    <a class="uk-text-default uk-text-secondary" href="{$pages->get('/')->url}" alt="">
+                        {$page->title|upper}
+                    </a>
+                {/if}
             </p>
 
 
