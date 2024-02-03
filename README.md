@@ -1,4 +1,4 @@
-<img src="https://teachingmachine.tv/image/tm_glyph_2.png" width="150" />
+<img src="https://teachingmachine.tv/site/assets/files/1036/tm-logo-large.svg" />
 
 # The Teaching Machine ProcessWire
 
