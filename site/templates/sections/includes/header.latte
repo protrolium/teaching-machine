@@ -19,7 +19,7 @@
 
             <p class="uk-flex uk-margin-small-left" style="align-items:center;">
                 <a class="uk-text-default uk-text-secondary" href="{$pages->get('/')->url}" alt="">
-                    {$page->title}
+                    {$page->title|upper}
                 </a>
             </p>
 
@@ -33,7 +33,7 @@
                 </div>
 
                 <div id="menuContainer">
-                    <button id="header-nav" class="hamburger-nav" uk-toggle="target: #menu" type="button">
+                    <button id="header-nav" class="hamburger-nav uk-text-secondary" uk-toggle="target: #menu" type="button">
                         <span uk-icon="icon: menu; ratio: 1.5;"></span>
                     </button>
                 </div>

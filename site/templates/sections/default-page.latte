@@ -21,7 +21,7 @@
 
                     {foreach $page->categories as $category}
                         <a class="noUnderline" href="{$category->url}" alt="">
-                            <button class="uk-button uk-button-default uk-button-small button-hover">
+                            <button class="uk-button uk-button-default uk-button-small button-hover" style="margin-top:5px;">
                                 <span class="text-light">{$category->title}</span>
                                 <span class="text-light hover-icon" uk-icon="icon: arrow-right; ratio: 1"></span>
                             </button>
@@ -31,7 +31,15 @@
 
                 {* title *}
                 <div class="">
-                        <div class="uk-padding-small">
+                        {* mobile *}
+                        <div class="uk-padding-small uk-hidden@m">
+                            <span class="uk-heading-small text-light" style="word-wrap:break-word;">
+                                {$page->title|upper|noescape}
+                            </span>
+                        </div>
+
+                        {* desktop *}
+                        <div class="uk-padding-small uk-visible@m">
                             <span class="uk-heading-2xlarge text-light" style="word-wrap:break-word;">
                                 {$page->title|upper|noescape}
                             </span>
@@ -56,11 +64,16 @@
                 {$page->body|noescape}
             </span>
             
-            {* embed *}
-            {if $page??->embed_code}
-                <div class="video-container uk-margin-top uk-margin-auto-left">
-                    {$page->embed_code|noescape}
+            {* video embed *}
+            {if $page??->video_embed_1}
+                <div class="video-container uk-margin-top">
+                    {$page->video_embed_1|noescape}
                 </div>
+                {if $page??->video_embed_2}
+                    <div class="video-container uk-margin-top">
+                        {$page->video_embed_2|noescape}
+                    </div>
+                {/if}
             {/if}
         </div>
 

@@ -40,8 +40,8 @@ $rockfrontend
 		<!-- make sure we get styling on mobile by setting meta viewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?php echo ($page->name == 'home' ? $page->title : $page->title . ' — Teaching Machine'); ?></title>
-		<meta name="description" content="">
-		<meta name="keywords" content="">
+		<meta name="description" content="The Teaching Machine is an independent arts laboratory devising strategies for amalgamated practices within the cinematic imaginary, musical zeitgeist, and networked hyperstructres.">
+		<meta name="keywords" content="teaching machine audio visual art collective concert visuals vj video installation virutal reality music releases classical beat techno experimental chamber music performer electronic film cinema opera print illustration web net software los angeles barcelona singapore 3D fractal hypercube strangeloop looop gavin gamboa jake bloch micah nelson gemma soldati ian simon ben olsen timeboy brainfeeder gallery exhibition opening robotics">
 		<meta name="generator" content="ProcessWire">
 
 		<!-- fonts -->
