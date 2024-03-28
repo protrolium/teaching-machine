@@ -33,7 +33,7 @@ $rockfrontend
 	<head id="html-head">
 		
 		<!-- hide our site content -->
-		<style>html{visibility: hidden;opacity:0;}body.preload * {transition: none !important;animation: none !important;}body.preload .page-content {opacity: 0;visibility: hidden;}</style>
+		<!-- <style>html{visibility: hidden;opacity:0;}body.preload * {transition: none !important;animation: none !important;}body.preload .page-content {opacity: 0;visibility: hidden;}</style> -->
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		
@@ -77,10 +77,10 @@ $rockfrontend
 		<?= $rockfrontend->render("sections/includes/footer.latte") ?>
 
 		<!-- show our site content -->
-		<style>html{visibility: visible;opacity:1;}</style>
+		<!-- <style>html{visibility: visible;opacity:1;}</style> -->
 
 		<!-- unhide the site content set via inline css above -->
-		<script type="text/javascript">window.addEventListener('load', function () {document.body.classList.remove('preload');});</script>
+		<!-- <script type="text/javascript">window.addEventListener('load', function () {document.body.classList.remove('preload');});</script> -->
 
 		<!-- scripts for once DOM is loaded -->
 		<script type="text/javascript" src="<?php echo $config->urls->templates?>scripts/onload.js" defer></script>
