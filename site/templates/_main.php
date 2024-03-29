@@ -15,9 +15,9 @@
 
 $home = $pages->get('/'); // homepage directory
 $rockfrontend->styles()
+	->add("/site/templates/styles/oswald.css")
 	->add("/site/templates/uikit/src/less/uikit.theme.less")
 	->add("/site/templates/styles/custom.less")
-	->add("/site/templates/styles/oswald.css")
 	->addDefaultFolders()
 	;
 $rockfrontend
@@ -85,6 +85,6 @@ $rockfrontend
 		<!-- scripts for once DOM is loaded -->
 		<script type="text/javascript" src="<?php echo $config->urls->templates?>scripts/onload.js" defer></script>
 		<!-- mastodon verification -->
-		<a class="noExternalSVG" rel="me" href="https://autonomous.zone/@theteachingmachine" style="display:hidden;"></a>
+		<a class="noExternalSVG" rel="me" href="https://autonomous.zone/@theteachingmachine" style="display:hidden;" aria-label="Mastodon Verification"></a>
 	</body>
 </html>
