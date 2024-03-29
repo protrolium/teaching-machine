@@ -84,5 +84,7 @@ $rockfrontend
 
 		<!-- scripts for once DOM is loaded -->
 		<script type="text/javascript" src="<?php echo $config->urls->templates?>scripts/onload.js" defer></script>
+		<!-- mastodon verification -->
+		<a class="noExternalSVG" rel="me" href="https://autonomous.zone/@theteachingmachine" style="display:hidden;"></a>
 	</body>
 </html>
