@@ -12,7 +12,7 @@
             <div 
                 class="uk-padding-small uk-padding-remove-right" 
                 style="width: 75px;">
-                    <a class="uk-text-secondary uk-icon" href="{$pages->get('/')->url}">
+                    <a class="uk-text-secondary uk-icon" href="{$pages->get('/')->url}" aria-label="Navigate to Home">
                         {$pages->get('name=tm-logo, template=image')->markup|noescape}
                     </a>
             </div>
@@ -30,13 +30,13 @@
             <div class="uk-navbar-right uk-padding-small">
 
                 <div>
-                    <button id="dark-mode-btn" class="theme-toggle uk-text-large" onclick="toggleTheme()">
+                    <button id="dark-mode-btn" class="theme-toggle uk-text-large" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode">
                         <span>🌖</span>
                     </button>
                 </div>
 
                 <div id="menuContainer">
-                    <button id="header-nav" class="hamburger-nav uk-text-secondary" uk-toggle="target: #menu" type="button">
+                    <button id="header-nav" class="hamburger-nav uk-text-secondary" uk-toggle="target: #menu" type="button" aria-label="Menu">
                         <span uk-icon="icon: menu; ratio: 1.5;"></span>
                     </button>
                 </div>
@@ -52,7 +52,7 @@
                 <div 
                     class="uk-padding-small uk-padding-remove-right" 
                     style="width: 200px;">
-                    <a class="uk-icon noHover" href="{$pages->get('/')->url}">
+                    <a class="uk-icon noHover" href="{$pages->get('/')->url}" aria-label="Navigate to Home">
                         {$pages->get('name=tm-logo-text-header, template=image')->markup|noescape}
                     </a>
                 </div>
@@ -81,7 +81,8 @@
                         id="header-nav-desktop" 
                         class="hamburger-nav uk-text-secondary" 
                         uk-toggle="target: #menu" 
-                        type="button">
+                        type="button"
+                        aria-label="Menu">
                             <span uk-icon="icon: menu; ratio: 1.5;"></span>
                     </button>
                 </div>
@@ -89,7 +90,7 @@
 
             <li>
                 <div style="margin-top: 3px;">
-                    <button id="dark-mode-btn-desktop" class="theme-toggle uk-text-large"  onclick="toggleTheme()">
+                    <button id="dark-mode-btn-desktop" class="theme-toggle uk-text-large"  onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode">
                         <span>🌖</span>
                     </button>
                 </div>
