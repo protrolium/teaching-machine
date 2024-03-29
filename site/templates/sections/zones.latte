@@ -23,9 +23,17 @@
 
             {foreach $page->children() as $item}
                 <div class="uk-padding-small uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right">
-                    <a class="noUnderline" href="{$item->url}">
-                        <span class="uk-heading-small">{$item->title}</span>
-                    </a>
+                    {* if the item's children count is less than 2 *}
+                    
+                    {if $item->children()->count() < 2}
+                        <a class="noUnderline" href="{$item->children()->first->url}">
+                            <span class="uk-heading-small">{$item->title}</span>
+                        </a>
+                    {else}
+                        <a class="noUnderline" href="{$item->url}">
+                            <span class="uk-heading-small">{$item->title}</span>
+                        </a>
+                    {/if}
                 </div>
             {/foreach}
         </div>

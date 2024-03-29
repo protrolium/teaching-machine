@@ -29,7 +29,7 @@
       <div class="uk-padding uk-padding-remove-top" uk-grid>
         {foreach $pages->get('network')->children() as $network}
           <div class="uk-margin-medium uk-margin-remove-bottom uk-margin-remove-top">
-            <a class="noUnderline uk-text-large uk-text-secondary noExternalSVG" href="{$network->link}">{$network->title}</a>
+            <a class="noUnderline uk-text-large uk-text-secondary noExternalSVG" href="{$network->link}" target="_blank">{$network->title}</a>
           </div>
         {/foreach}
       </div>
