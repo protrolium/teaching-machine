@@ -21,21 +21,21 @@ root
         ├── classes
         │   ├── DefaultPage.php
         │   └── HomePage.php
-        ├── templates
-        │   ├── home.php
-        │   ├── default-page.php
-        │   ├── tag.php
-        │   ├── tags.php
-        │   └── (etc)
-        └── layouts
+        └── templates
             ├── home.php
-            ├── default.php (main rockfrontend renderer)
-            └── sections
-                ├── about.latte
-                ├── default-page.latte
-                ├── home.latte
-                ├── tag.latte
-                └── (etc)
+            ├── default-page.php
+            ├── tag.php
+            ├── tags.php
+            │── (etc)
+            ├── sections
+            │   ├── about.latte
+            │   ├── default-page.latte
+            │   ├── home.latte
+            │   ├── tag.latte
+            │   └── (etc)
+            └── layouts
+                ├── home.php
+                └── default.php (main rockfrontend renderer)
 ```
 
 ### Templates & Layouts
