@@ -30,6 +30,24 @@ if(!defined("PROCESSWIRE")) die();
     }
   });
 
+  // Add custom filter to Latte
+  $wire->addHookAfter("RockFrontend::loadLatte", function ($event) {
+    $latte = $event->return;
+
+    // Adding a custom filter to fetch YouTube thumbnail URL
+    $latte->addFilter('youtubeThumbnail', function (string $iframeMarkup) {
+        // Use regex to extract the video ID
+        preg_match('/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/', $iframeMarkup, $matches);
+        $videoID = $matches[1] ?? '';
+
+        // Return the thumbnail URL if video ID is found
+        if ($videoID) {
+            return "https://img.youtube.com/vi/$videoID/sddefault.jpg";
+        }
+        return "";
+    });
+  });
+
   // access init method from within the custom page RadioPage page class
   // $pages->get("template=tag")->init();
   // $pages->get("template=default-page")->init();
