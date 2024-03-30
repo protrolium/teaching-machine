@@ -15,7 +15,6 @@
 
 $home = $pages->get('/'); // homepage directory
 $rockfrontend->styles()
-	->add("/site/templates/styles/oswald.css")
 	->add("/site/templates/uikit/src/less/uikit.theme.less")
 	->add("/site/templates/styles/custom.less")
 	->addDefaultFolders()
@@ -25,6 +24,7 @@ $rockfrontend
 	->add("/site/templates/uikit/dist/js/uikit.min.js")
 	->add("/site/templates/uikit/dist/js/uikit-icons.min.js", "defer")
 	->add("/site/templates/scripts/main.js")
+	->add("/site/templates/scripts/consenty.min.js", "defer")
 	;
 
 ?>
@@ -48,6 +48,7 @@ $rockfrontend
 		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="" rel="stylesheet">  -->
+		<link rel="preload" href="<?php echo $config->urls->templates?>styles/oswald.css" as="font" type="font/woff2">
 
 		<!-- favicons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $config->urls->assets?>favicon/apple-touch-icon.png">
