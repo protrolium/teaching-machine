@@ -108,19 +108,94 @@
             <div class="uk-text-large">
                 {$page->body|noescape}
             </div>
-            
+
             {* video embed *}
             {if $page??->video_embed_1}
-                <div class="video-container uk-margin-top">
-                    {$page->video_embed_1|noescape}
-                </div>
-                {if $page??->video_embed_2}
+                {if strpos($page->video_embed_1, 'vimeo') !== false}
                     <div class="video-container uk-margin-top">
-                        {$page->video_embed_2|noescape}
+                        {$page->video_embed_1|noescape}
                     </div>
+                {else}
+                    <template consenty-if="!youtube-inline">
+                        <div class="uk-inline">
+                            <img src="{$page->video_embed_1|youtubeThumbnail}">
+                            <div class="uk-overlay-primary uk-position-cover">
+                                <div class="uk-position-center uk-text-center">
+                                    <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
+                                        Allow Youtube
+                                    </a>
+                                    <div class="uk-margin-small-top uk-text-muted">
+                                        See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template consenty-if="youtube-inline">
+                        <div class="video-container uk-margin-top">
+                            {$page->video_embed_1|noescape}
+                        </div>
+                    </template>
+
+                    <div class="uk-margin-small-top">
+                        {* <div>
+                            Place this on your privacy page so that the user can revoke
+                            consent:
+                        </div> *}
+
+                        <label>
+                            <input type="checkbox" class="uk-checkbox" consenty-toggle="youtube-inline">
+                                Allow embedding of YouTube videos
+                        </label>
+                    </div> 
+
+                    {if $page??->video_embed_2}
+                        {if strpos($page->video_embed_2, 'vimeo') !== false}
+                            <div class="video-container uk-margin-top">
+                                {$page->video_embed_2|noescape}
+                            </div>
+                        {else}
+                            <template consenty-if="!youtube-inline">
+                                <div class="video-container uk-margin-top">
+                                    <div class="uk-inline">
+                                        <img src="{$page->video_embed_2|youtubeThumbnail}">
+                                        <div class="uk-overlay-primary uk-position-cover">
+                                            <div class="uk-position-center uk-text-center">
+                                                <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
+                                                    Allow YouTube
+                                                </a>
+                                                <div class="uk-margin-small-top uk-text-muted">
+                                                    See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </template>
+
+                            <template consenty-if="youtube-inline">
+                                <div class="video-container uk-margin-top">
+                                    {$page->video_embed_2|noescape}
+                                </div>
+                            </template>
+
+                            {* <div class="uk-margin-small-top">
+                                <div>
+                                    Place this on your privacy page so that the user can revoke
+                                    consent:
+                                </div>
+
+                                <label>
+                                    <input type="checkbox" class="uk-checkbox" consenty-toggle="youtube-inline">
+                                        Allow embedding of YouTube videos
+                                </label>
+                            </div> *}
+                        {/if}
+                    {/if}
                 {/if}
             {/if}
-            
+  
             {* audio embed *}
             {if $page??->audio_embed_1}
                 <div class="uk-margin-large-top">
@@ -148,29 +223,34 @@
 
     </div>
 
-    {* more label items *}
-    {if $page->parent()->children()->count > 1}
-        <div class="uk-padding" uk-scrollspy="cls: uk-animation-fade; target: #more-items-fade; delay: 200; repeat: false;">
-            <div id="more-items-fade" class="font-bold" style="font-size:3vw;">
+    {if $page->title != "Privacy Policy"}
+        
+        {* related items *}
+        {* more label items *}
+        {if $page->parent()->children()->count > 1}
+            <div class="uk-padding" uk-scrollspy="cls: uk-animation-fade; target: #more-items-fade; delay: 200; repeat: false;">
+                <div id="more-items-fade" class="font-bold" style="font-size:3vw;">
+                    <h1 class="uk-text-muted uk-heading-line">
+                        <span>📁 <span class="uk-text-secondary">{$page->parent->title|upper}</span> continued</span>
+                    </h1>
+                </div>
+                <div>
+                    {$rockfrontend->render("/sections/includes/more-items.latte")}
+                </div>
+            </div>
+        {/if}
+
+        <div class="uk-padding uk-visible@m" uk-scrollspy="cls: uk-animation-fade; target: #site-wide-items-fade; delay: 200; repeat: false;">
+            <div id="site-wide-items-fade" class="font-bold" style="font-size:3vw;">
                 <h1 class="uk-text-muted uk-heading-line">
-                    <span>📁 <span class="uk-text-secondary">{$page->parent->title|upper}</span> continued</span>
+                    <span>👾 <span class="uk-text-secondary">ALL ZONES</span>
                 </h1>
             </div>
             <div>
-                {$rockfrontend->render("/sections/includes/more-items.latte")}
+                {$rockfrontend->render("/sections/includes/site-wide-items.latte")}
             </div>
         </div>
     {/if}
 
-    <div class="uk-padding uk-visible@m" uk-scrollspy="cls: uk-animation-fade; target: #site-wide-items-fade; delay: 200; repeat: false;">
-        <div id="site-wide-items-fade" class="font-bold" style="font-size:3vw;">
-            <h1 class="uk-text-muted uk-heading-line">
-                <span>👾 <span class="uk-text-secondary">ALL ZONES</span>
-            </h1>
-        </div>
-        <div>
-            {$rockfrontend->render("/sections/includes/site-wide-items.latte")}
-        </div>
-    </div>
 
 </section>
