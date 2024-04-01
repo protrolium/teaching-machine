@@ -67,13 +67,43 @@
             {* video embed *}
             {if $page??->video_embed_1}
                 {if strpos($page->video_embed_1, 'vimeo') !== false}
-                    <div class="video-container uk-margin-top">
-                        {$page->video_embed_1|noescape}
-                    </div>
+                    <template consenty-if="!vimeo-inline">
+                        <div class="uk-inline">
+                            <img src="{$page->video_embed_1_thumb->url}">
+                            <div class="uk-overlay-primary uk-position-cover">
+                                <div class="uk-position-center uk-text-center">
+                                    <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow Vimeo">
+                                        Allow Vimeo
+                                    </a>
+                                    <div class="uk-margin-small-top uk-text-muted">
+                                        See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template consenty-if="vimeo-inline">
+                        <div class="video-container uk-margin-top">
+                            {$page->video_embed_1|noescape}
+                        </div>
+                    </template>
+
+                    <div class="uk-margin-small-top uk-margin-medium-bottom">
+                        {* <div>
+                            Place this on your privacy page so that the user can revoke
+                            consent:
+                        </div> *}
+
+                        <label>
+                            <input type="checkbox" class="uk-checkbox" consenty-toggle="youtube-inline">
+                                Allow embedding of Vimeo videos
+                        </label>
+                    </div> 
                 {else}
                     <template consenty-if="!youtube-inline">
                         <div class="uk-inline">
-                            <img src="{$page->video_embed_1|youtubeThumbnail}">
+                            <img src="{$page->video_embed_1_thumb->url}">
                             <div class="uk-overlay-primary uk-position-cover">
                                 <div class="uk-position-center uk-text-center">
                                     <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
@@ -93,7 +123,7 @@
                         </div>
                     </template>
 
-                    <div class="uk-margin-small-top">
+                    <div class="uk-margin-small-top uk-margin-medium-bottom">
                         {* <div>
                             Place this on your privacy page so that the user can revoke
                             consent:
@@ -103,7 +133,7 @@
                             <input type="checkbox" class="uk-checkbox" consenty-toggle="youtube-inline">
                                 Allow embedding of YouTube videos
                         </label>
-                    </div> 
+                    </div>
 
                     {if $page??->video_embed_2}
                         {if strpos($page->video_embed_2, 'vimeo') !== false}
@@ -114,7 +144,7 @@
                             <template consenty-if="!youtube-inline">
                                 <div class="video-container uk-margin-top">
                                     <div class="uk-inline">
-                                        <img src="{$page->video_embed_2|youtubeThumbnail}">
+                                        <img src="{$page->video_embed_2_thumb->url}">
                                         <div class="uk-overlay-primary uk-position-cover">
                                             <div class="uk-position-center uk-text-center">
                                                 <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
@@ -149,6 +179,44 @@
                         {/if}
                     {/if}
                 {/if}
+            {/if}
+            
+            {* audio embed *}
+            {if $page??->audio_embed_1}
+                {* show Bandcamp embed *}
+                <template consenty-if="!bandcamp-inline">
+                    <div class="uk-inline">
+                        <img src="{$page->featured_image->first->url}">
+                        <div class="uk-overlay-primary uk-position-cover">
+                            <div class="uk-position-center uk-text-center">
+                                <a class="uk-button uk-button-primary" consenty-allow="bandcamp-inline" aria-label="Allow Bandcamp">
+                                    Allow Bandcamp
+                                </a>
+                                <div class="uk-margin-small-top uk-text-muted">
+                                    See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <template consenty-if="bandcamp-inline">
+                    <div class="uk-margin-large-top">
+                        {$page->audio_embed_1|noescape}
+                    </div>
+                </template>
+
+                <div class="uk-margin-small-top">
+                    {* <div>
+                        Place this on your privacy page so that the user can revoke
+                        consent:
+                    </div> *}
+
+                    <label>
+                        <input type="checkbox" class="uk-checkbox" consenty-toggle="bandcamp-inline">
+                            Allow embedding of Bandcamp widgets
+                    </label>
+                </div>
             {/if}
         </div>
 
@@ -186,18 +254,51 @@
 
             {* video embed *}
             {if $page??->video_embed_1}
+                {* show Vimeo embed  *}
                 {if strpos($page->video_embed_1, 'vimeo') !== false}
-                    <div class="video-container uk-margin-top">
-                        {$page->video_embed_1|noescape}
-                    </div>
+                    <template consenty-if="!vimeo-inline">
+                        <div class="uk-inline">
+                            <img src="{$page->video_embed_1_thumb->url}">
+                            <div class="uk-overlay-primary uk-position-cover">
+                                <div class="uk-position-center uk-text-center">
+                                    <a class="uk-button uk-button-primary" consenty-allow="vimeo-inline" aria-label="Allow Vimeo">
+                                        Allow Vimeo
+                                    </a>
+                                    <div class="uk-margin-small-top uk-text-muted">
+                                        See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template consenty-if="vimeo-inline">
+                        <div class="video-container uk-margin-top">
+                            {$page->video_embed_1|noescape}
+                        </div>
+                    </template>
+
+                    <div class="uk-margin-small-top uk-margin-medium-bottom">
+                        {* <div>
+                            Place this on your privacy page so that the user can revoke
+                            consent:
+                        </div> *}
+
+                        <label>
+                            <input type="checkbox" class="uk-checkbox" consenty-toggle="vimeo-inline">
+                                Allow embedding of Vimeo videos
+                        </label>
+
+                    </div> 
                 {else}
+                    {* show YouTube video embed *}
                     <template consenty-if="!youtube-inline">
                         <div class="uk-inline">
-                            <img src="{$page->video_embed_1|youtubeThumbnail}">
+                            <img src="{$page->video_embed_1_thumb->url}">
                             <div class="uk-overlay-primary uk-position-cover">
                                 <div class="uk-position-center uk-text-center">
                                     <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
-                                        Allow Youtube
+                                        Allow YouTube
                                     </a>
                                     <div class="uk-margin-small-top uk-text-muted">
                                         See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
@@ -213,7 +314,7 @@
                         </div>
                     </template>
 
-                    <div class="uk-margin-small-top">
+                    <div class="uk-margin-small-top uk-margin-medium-bottom">
                         {* <div>
                             Place this on your privacy page so that the user can revoke
                             consent:
@@ -234,7 +335,7 @@
                             <template consenty-if="!youtube-inline">
                                 <div class="video-container uk-margin-top">
                                     <div class="uk-inline">
-                                        <img src="{$page->video_embed_2|youtubeThumbnail}">
+                                        <img src="{$page->video_embed_2_thumb->url}">
                                         <div class="uk-overlay-primary uk-position-cover">
                                             <div class="uk-position-center uk-text-center">
                                                 <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
@@ -273,8 +374,39 @@
   
             {* audio embed *}
             {if $page??->audio_embed_1}
-                <div class="uk-margin-large-top">
-                    {$page->audio_embed_1|noescape}
+                {* show Bandcamp embed *}
+                <template consenty-if="!bandcamp-inline">
+                    <div class="uk-inline">
+                        <img src="{$page->featured_image->first->url}">
+                        <div class="uk-overlay-primary uk-position-cover">
+                            <div class="uk-position-center uk-text-center">
+                                <a class="uk-button uk-button-primary" consenty-allow="bandcamp-inline" aria-label="Allow Bandcamp">
+                                    Allow Bandcamp
+                                </a>
+                                <div class="uk-margin-small-top uk-text-muted">
+                                    See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <template consenty-if="bandcamp-inline">
+                    <div class="uk-margin-large-top">
+                        {$page->audio_embed_1|noescape}
+                    </div>
+                </template>
+
+                <div class="uk-margin-small-top">
+                    {* <div>
+                        Place this on your privacy page so that the user can revoke
+                        consent:
+                    </div> *}
+
+                    <label>
+                        <input type="checkbox" class="uk-checkbox" consenty-toggle="bandcamp-inline">
+                            Allow embedding of Bandcamp widgets
+                    </label>
                 </div>
             {/if}
         </div>
