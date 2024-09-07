@@ -71,9 +71,11 @@ $rockfrontend
 		<!-- make sure we are in dark mode -->
 		<script type="text/javascript">
 			const selectedTheme = localStorage.getItem('dark-mode');
-			if (selectedTheme === "disabled") {
+			if (selectedTheme === "enabled") {
+				html.dataset.theme = `theme-dark`;
+			} else if (selectedTheme === "disabled") {
 				html.dataset.theme = `theme-light`;
-			};
+			}
 		</script>
 
 		<?= $rockfrontend->render("sections/includes/header.latte") ?>

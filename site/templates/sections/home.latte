@@ -1,6 +1,10 @@
 <section class="uk-height-viewport">
     
-    {var $items = $page->find("children.count=0, sort=-post_date, template=default-page, limit=4")}
+    {* old method … which grabbed the four latest projects *}
+    {* {var $items = $page->find("children.count=0, sort=-post_date, template=default-page, limit=4")} *}
+    
+    {* new method finds $home->featured_projects PageArray *}
+    {var $items = $page->featured_projects}
 
     <div class="uk-width-1-1">
         <div id="hover" class="uk-card">
@@ -221,7 +225,12 @@
         uk-grid="masonry: false;" 
         uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 275; repeat: false;">
         
-        {var $items = $page->find("children.count=0, sort=-post_date, template=default-page")->slice(4, 12)}
+        {* old method which skipped the first four projects and showed the rest *}
+        {* {var $items = $page->find("children.count=0, sort=-post_date, template=default-page")->slice(4, 12)} *}
+
+        {* new method finds $home->featured_projects PageArray and excluedes those ids *}
+        {var $exclude_featured = $page->featured_projects}
+        {var $items = $page->find("children.count=0, sort=-post_date, template=default-page, id!=$exclude_featured")->slice(0, 12)}
 
         {foreach $items as $item}
             <div id="hover" class="uk-card">
