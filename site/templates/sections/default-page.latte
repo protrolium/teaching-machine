@@ -243,8 +243,12 @@
             {* date *}
             <div class="uk-padding-small uk-padding-remove-left uk-padding-remove-top">
                 <span class="uk-text-large uk-text-muted text-light">
-                    <span uk-icon="icon: calendar; ratio: 1.7"></span> &nbsp;
-                    <span style="vertical-align: bottom;">{$page->post_date}</span>
+                    {if $page??->post_date}
+                        <span uk-icon="icon: calendar; ratio: 1.7"></span> &nbsp;
+                        <span style="vertical-align: bottom;">
+                            {$page->post_date}
+                        </span>
+                    {/if}
                 </span>
             </div>
 
