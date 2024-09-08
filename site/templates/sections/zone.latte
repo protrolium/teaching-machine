@@ -47,7 +47,13 @@
                         
                         {* body truncated text *}
                         <div class="uk-text-muted uk-text-small noExternalSVG">
-                            {$item->body|stripHtml|truncate:110}
+                            {foreach $item->repeater_matrix as $matrix_item}
+                                {if $matrix_item->type == 'bodycopy'}
+                                    {if $iterator->first}
+                                        {$matrix_item->body|stripHtml|truncate:125}
+                                    {/if}
+                                {/if}
+                            {/foreach}
                         </div>
                     </div>
                     

@@ -248,6 +248,143 @@
                 </span>
             </div>
 
+            {foreach $page->repeater_matrix as $item}
+
+                {if $item->type == "bodycopy"}
+                    <div class="uk-margin-large-bottom uk-text-large">
+                        {$item->body|noescape}
+                    </div>
+                {/if}
+
+                {if $item->type == "single_image"}
+                    <div class="uk-margin-large-top uk-margin-large-bottom">
+                        <img src="{$item->image->url}" alt="{$item->image->title}" uk-img>
+                    </div>
+                {/if}
+
+                {if $item->type == "blockquote"}
+                    <blockquote class="uk-margin-top">
+                        <p>{$item->body|noescape}</p>
+                        {if $item??->author}
+                            <footer class="uk-text-large">{$item->author}</footer>
+                        {/if}
+                    </blockquote>
+                {/if}
+
+                {if $item->type == "video_embed_repeater"}
+                    {* show Vimeo embed  *}
+                    {if strpos($item->video_embed, 'vimeo') !== false}
+                        <template consenty-if="!vimeo-inline">
+                            <div class="uk-inline">
+                                <img src="{$item->video_embed_thumb->url}">
+                                <div class="uk-overlay-primary uk-position-cover">
+                                    <div class="uk-position-center uk-text-center">
+                                        <a class="uk-button uk-button-primary" consenty-allow="vimeo-inline" aria-label="Allow Vimeo">
+                                            Allow Vimeo
+                                        </a>
+                                        <div class="uk-margin-small-top uk-text-muted">
+                                            See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template consenty-if="vimeo-inline">
+                            <div class="video-container uk-margin-top">
+                                {$item->video_embed|noescape}
+                            </div>
+                        </template>
+
+                        <div class="uk-margin-small-top uk-margin-medium-bottom">
+                            {* <div>
+                                Place this on your privacy page so that the user can revoke
+                                consent:
+                            </div> *}
+
+                            <label>
+                                <input type="checkbox" class="uk-checkbox" consenty-toggle="vimeo-inline">
+                                    Allow embedding of Vimeo videos
+                            </label>
+
+                        </div> 
+                    {else}
+                        {* show YouTube video embed *}
+                        <template consenty-if="!youtube-inline">
+                            <div class="uk-inline">
+                                <img src="{$item->video_embed_thumb->url}">
+                                <div class="uk-overlay-primary uk-position-cover">
+                                    <div class="uk-position-center uk-text-center">
+                                        <a class="uk-button uk-button-primary" consenty-allow="youtube-inline" aria-label="Allow YouTube">
+                                            Allow YouTube
+                                        </a>
+                                        <div class="uk-margin-small-top uk-text-muted">
+                                            See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template consenty-if="youtube-inline">
+                            <div class="video-container uk-margin-top">
+                                {$item->video_embed|noescape}
+                            </div>
+                        </template>
+
+                        <div class="uk-margin-small-top uk-margin-medium-bottom">
+                            {* <div>
+                                Place this on your privacy page so that the user can revoke
+                                consent:
+                            </div> *}
+
+                            <label>
+                                <input type="checkbox" class="uk-checkbox" consenty-toggle="youtube-inline">
+                                    Allow embedding of YouTube videos
+                            </label>
+                        </div>
+                    {/if}
+                {/if}
+
+                {if $item->type == "audio_embed_repeater"}
+                    {* show Bandcamp embed *}
+                    <template consenty-if="!bandcamp-inline">
+                        <div class="uk-inline">
+                            <img src="{$page->featured_image->first->url}">
+                            <div class="uk-overlay-primary uk-position-cover">
+                                <div class="uk-position-center uk-text-center">
+                                    <a class="uk-button uk-button-primary" consenty-allow="bandcamp-inline" aria-label="Allow Bandcamp">
+                                        Allow Bandcamp
+                                    </a>
+                                    <div class="uk-margin-small-top uk-text-muted">
+                                        See <a style="text-decoration:none;" href="{$pages->get('privacy-policy')->url}" alt="">Privacy Policy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template consenty-if="bandcamp-inline">
+                        <div class="uk-margin-large-top">
+                            {$item->audio_embed|noescape}
+                        </div>
+                    </template>
+
+                    <div class="uk-margin-small-top">
+                        {* <div>
+                            Place this on your privacy page so that the user can revoke
+                            consent:
+                        </div> *}
+
+                        <label>
+                            <input type="checkbox" class="uk-checkbox" consenty-toggle="bandcamp-inline">
+                                Allow embedding of Bandcamp widgets
+                        </label>
+                    </div>
+                {/if}
+
+            {/foreach}
+
             <div class="uk-text-large">
                 {$page->body|noescape}
             </div>
@@ -438,7 +575,7 @@
             <div class="uk-padding" uk-scrollspy="cls: uk-animation-fade; target: #more-items-fade; delay: 200; repeat: false;">
                 <div id="more-items-fade" class="font-bold" style="font-size:3vw;">
                     <h1 class="uk-text-muted uk-heading-line">
-                        <span>📁 <span class="uk-text-secondary">{$page->parent->title|upper}</span> continued</span>
+                        <span><span class="uk-text-secondary">{$page->parent->title|upper}</span> continued</span>
                     </h1>
                 </div>
                 <div>
@@ -450,7 +587,7 @@
         <div class="uk-padding uk-visible@m" uk-scrollspy="cls: uk-animation-fade; target: #site-wide-items-fade; delay: 200; repeat: false;">
             <div id="site-wide-items-fade" class="font-bold" style="font-size:3vw;">
                 <h1 class="uk-text-muted uk-heading-line">
-                    <span>👾 <span class="uk-text-secondary">ALL ZONES</span>
+                    <span><span class="uk-text-secondary">ALL ZONES</span>
                 </h1>
             </div>
             <div>

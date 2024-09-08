@@ -33,6 +33,15 @@
             </div>
 
             {* body area *}
+            <div class="uk-padding-small uk-text-default">
+                {foreach $item->repeater_matrix as $matrix_item}
+                    {if $matrix_item->type == 'bodycopy'}
+                        {if $iterator->first}
+                            {$matrix_item->body|stripHtml|truncate:155}
+                        {/if}
+                    {/if}
+                {/foreach}
+            </div>
             
             {* categories *}
             <div class="uk-padding-small uk-padding-remove-top" style="margin-left: -5px;">

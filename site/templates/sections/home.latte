@@ -44,7 +44,13 @@
                 <div class="uk-padding-small uk-padding-remove-top">
                     {* body truncated text *}
                     <div class="uk-text-muted uk-text-small noExternalSVG">
-                        {$items[0]->body|stripHtml|truncate:110}
+                        {foreach $items[0]->repeater_matrix as $matrix_item}
+                            {if $matrix_item->type == 'bodycopy'}
+                                {if $iterator->first}
+                                    {$matrix_item->body|stripHtml|truncate:125}
+                                {/if}
+                            {/if}
+                        {/foreach}
                     </div>
                 </div>
                 
@@ -91,7 +97,13 @@
                 <div class="uk-padding-small uk-padding-remove-top">
                     {* body truncated text *}
                     <div class="uk-text-muted uk-text-small noExternalSVG">
-                        {$items[1]->body|stripHtml|truncate:110}
+                        {foreach $items[1]->repeater_matrix as $matrix_item}
+                            {if $matrix_item->type == 'bodycopy'}
+                                {if $iterator->first}
+                                    {$matrix_item->body|stripHtml|truncate:125}
+                                {/if}
+                            {/if}
+                        {/foreach}
                     </div>
                 </div>
             </div>
@@ -136,7 +148,13 @@
                     <div class="uk-padding-small uk-padding-remove-top">
                         {* body truncated text *}
                         <div class="uk-text-muted uk-text-small noExternalSVG">
-                            {$items[2]->body|stripHtml|truncate:110}
+                            {foreach $items[2]->repeater_matrix as $matrix_item}
+                                {if $matrix_item->type == 'bodycopy'}
+                                    {if $iterator->first}
+                                        {$matrix_item->body|stripHtml|truncate:125}
+                                    {/if}
+                                {/if}
+                            {/foreach}
                         </div>
                     </div>
                 </div>
@@ -182,7 +200,13 @@
                 <div class="uk-padding-small uk-padding-remove-top">
                     {* body truncated text *}
                     <div class="uk-text-muted uk-text-small noExternalSVG">
-                        {$items[3]->body|stripHtml|truncate:110}
+                        {foreach $items[3]->repeater_matrix as $matrix_item}
+                            {if $matrix_item->type == 'bodycopy'}
+                                {if $iterator->first}
+                                    {$matrix_item->body|stripHtml|truncate:125}
+                                {/if}
+                            {/if}
+                        {/foreach}
                     </div>
                 </div>
                 
@@ -275,7 +299,13 @@
                         
                         {* body truncated text *}
                         <div class="uk-text-muted uk-text-small noExternalSVG">
-                            {$item->body|stripHtml|truncate:110}
+                            {foreach $item->repeater_matrix as $matrix_item}
+                                {if $matrix_item->type == 'bodycopy'}
+                                    {if $iterator->first}
+                                        {$matrix_item->body|stripHtml|truncate:125}
+                                    {/if}
+                                {/if}
+                            {/foreach}
                         </div>
                     </div>
                     
