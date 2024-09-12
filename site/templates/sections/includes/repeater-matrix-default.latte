@@ -133,4 +133,10 @@
         </div>
     {/if}
 
+    {if $item->type == "code_embed_repeater"}
+        <div class="uk-margin-large-top">
+            {$item->code_embed|noescape}
+        </div>
+    {/if}
+
 {/foreach}
