@@ -1,4 +1,4 @@
-<section class="uk-height-viewport">
+<section class="uk-height-viewport" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 275; repeat: false;">
     
     {* old method … which grabbed the four latest projects *}
     {* {var $items = $page->find("children.count=0, sort=-post_date, template=default-page, limit=4")} *}
@@ -17,7 +17,7 @@
                 <div class="uk-overlay-primary uk-position-cover"></div>
             </a>
             
-            <div class="uk-overlay uk-position-bottom uk-padding-small uk-animation-fade">
+            <div class="uk-overlay uk-position-bottom uk-padding-small">
                 
                 {* categories *}
                 <a href="{$items[0]->url}" alt="">
@@ -68,7 +68,7 @@
                 <div class="uk-overlay-primary uk-position-cover"></div>
             </a>
             
-            <div class="uk-overlay uk-position-bottom uk-padding-small uk-animation-fade">
+            <div class="uk-overlay uk-position-bottom uk-padding-small">
                 
                 {* categories *}
                 <a href="{$items[1]->url}" alt="">
@@ -117,7 +117,7 @@
                     <div class="uk-overlay-primary uk-position-cover"></div>
                 </a>
                 
-                <div class="uk-overlay uk-position-bottom uk-padding-small uk-animation-fade">
+                <div class="uk-overlay uk-position-bottom uk-padding-small">
                     
                     {* categories *}
                     <a href="{$items[2]->url}" alt="">
@@ -167,7 +167,7 @@
                 <div class="uk-overlay-primary uk-position-cover"></div>
             </a>
             
-            <div class="uk-overlay uk-position-bottom uk-padding-small uk-animation-fade">
+            <div class="uk-overlay uk-position-bottom uk-padding-small">
                 
                 {* categories *}
                 <a href="{$items[3]->url}" alt="">
@@ -230,11 +230,17 @@
             </div>
         </div>
     </div>
+</section>
+
+<section>
     
     {* Process Stream *}
-    <div class="uk-padding uk-flex uk-flex-column" uk-grid>
-        <div class="uk-heading-small">Process Stream</div>
-        <div class="uk-text-large uk-margin-remove-top">Bulletins from the Laboratory</div>
+    <div 
+        class="uk-padding uk-flex uk-flex-column" uk-grid
+        uk-scrollspy="cls: uk-animation-fade; target: > div; delay: 275; repeat: false;">
+
+            <div class="uk-heading-small">Process Stream</div>
+            <div class="uk-text-large uk-margin-remove-top">Bulletins from the Laboratory</div>
     </div>
 
     <div 
@@ -281,7 +287,7 @@
                     {* title *}
                     <a class="noUnderline uk-text-secondary" href="{$item->url}" alt="">
                         <div class="uk-padding-small uk-padding-remove-bottom">
-                            <span class="text-light" style="font-size: 2.4em; word-wrap: break-word;">
+                            <span class="text-light uk-heading-small" style="font-size: 2.4em; word-wrap: break-word;">
                                 {$item->title|upper|noescape}
                             </span>
                         </div>
@@ -314,9 +320,13 @@
 
     {* Cinema of The Void *}
 
-    <div class="uk-padding uk-height-large uk-flex uk-flex-column uk-flex-right" uk-grid>
-        <div class="uk-heading-small">Cinema of The Void</div>
-        <div class="uk-text-large uk-margin-remove-top">Experiments & Thoughts on Cinema</div> 
+    <div 
+        class="uk-padding uk-height-large uk-flex uk-flex-column uk-flex-right uk-animation-fade" uk-grid
+        uk-scrollspy="cls: uk-animation-fade; target: > div; delay: 275; repeat: false;">
+
+            <div class="uk-heading-small">Cinema of The Void</div>
+            <div class="uk-text-large uk-margin-remove-top">Experiments & Thoughts on Cinema</div> 
+
     </div>
 
     <div 
@@ -358,7 +368,7 @@
                     {* title *}
                     <a class="noUnderline uk-text-secondary" href="{$item->url}" alt="">
                         <div class="uk-padding-small uk-padding-remove-bottom">
-                            <span class="text-light" style="font-size: 1.8em; word-wrap: break-word;">
+                            <span class="text-light uk-heading-small" style="font-size: 1.8em; word-wrap: break-word;">
                                 {$item->title|upper|noescape}
                             </span>
                         </div>
