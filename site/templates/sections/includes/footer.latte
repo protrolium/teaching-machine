@@ -10,11 +10,11 @@
       <div class="uk-padding uk-padding-remove-top" uk-grid>
         {foreach $pages->get('social')->children() as $social}
           <div class="uk-margin-remove-top">
-            <a 
-              class="noUnderline uk-text-large uk-text-secondary uk-margin-medium uk-margin-remove-bottom noExternalSVG" 
-              href="{$social->link}" target="_blank">
-                {$social->title}
-            </a>
+            <span class="uk-text-large uk-heading-small">
+              <a class="noUnderline uk-text-secondary uk-margin-medium uk-margin-remove-bottom noExternalSVG" href="{$social->link}" target="_blank">
+                  {$social->title}
+              </a>
+            </span>
           </div>
         {/foreach}
       </div>
@@ -29,7 +29,11 @@
       <div class="uk-padding uk-padding-remove-top" uk-grid>
         {foreach $pages->get('network')->children() as $network}
           <div class="uk-margin-medium uk-margin-remove-bottom uk-margin-remove-top">
-            <a class="noUnderline uk-text-large uk-text-secondary noExternalSVG" href="{$network->link}" target="_blank">{$network->title}</a>
+            <span class="uk-text-large uk-heading-small">
+              <a class="noUnderline uk-text-secondary noExternalSVG" href="{$network->link}" target="_blank">
+                {$network->title}
+              </a>
+            </span>
           </div>
         {/foreach}
       </div>
