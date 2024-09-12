@@ -25,7 +25,7 @@
             <div class="uk-margin-small-top">
                 <a class="removeTextDecoration" href="{$item->url}" alt="">
                     <div class="uk-padding-small">
-                        <span class="uk-text-large" style="word-wrap:break-word;">
+                        <span class="uk-text-large uk-heading-small" style="word-wrap:break-word;">
                             {$item->title|upper|noescape}
                         </span>
                     </div>
@@ -34,11 +34,9 @@
 
             {* body area *}
             <div class="uk-padding-small uk-text-default">
-                {foreach $item->repeater_matrix as $matrix_item}
-                    {if $matrix_item->type == 'bodycopy'}
-                        {if $iterator->first}
-                            {$matrix_item->body|stripHtml|truncate:155}
-                        {/if}
+                {foreach $item->repeater_matrix->find("type=bodycopy") as $body}
+                    {if $iterator->first}
+                        {$body->body|stripHtml|truncate:125}
                     {/if}
                 {/foreach}
             </div>
