@@ -2,7 +2,7 @@
 
     {if $page->name == "cinema-of-the-void"}
         {* Cinema of The Void *}
-        <div class="uk-padding uk-height-medium uk-flex uk-flex-column uk-flex-right" uk-grid>
+        <div class="uk-padding uk-height-medium uk-flex uk-flex-column uk-flex-right uk-animation-fade" uk-grid>
             <div class="uk-heading-small">Cinema of The Void</div>
             <div class="uk-text-large uk-margin-remove-top">Experiments & Thoughts on Cinema</div> 
         </div>
@@ -45,9 +45,15 @@
                     {* title *}
                     <a class="noUnderline uk-text-secondary" href="{$item->url}" alt="">
                         <div class="uk-padding-small uk-padding-remove-bottom">
-                            <span class="text-light" style="font-size: 2.4em; word-wrap: break-word;">
-                                {$item->title|upper|noescape}
-                            </span>
+                            {if $item->parent->name == "cinema-of-the-void"}
+                                <span class="text-light uk-text-large uk-heading-small" style="font-size: 1.8em; word-wrap: break-word;">
+                                    {$item->title|upper|noescape}
+                                </span>
+                            {else}
+                                <span class="text-light uk-text-large uk-heading-small" style="font-size: 2.4em; word-wrap: break-word;">
+                                    {$item->title|upper|noescape}
+                                </span>
+                            {/if}
                         </div>
                     </a>
 
@@ -56,11 +62,9 @@
                         
                         {* body truncated text *}
                         <div class="uk-text-muted uk-text-small noExternalSVG">
-                            {foreach $item->repeater_matrix as $matrix_item}
-                                {if $matrix_item->type == 'bodycopy'}
-                                    {if $iterator->first}
-                                        {$matrix_item->body|stripHtml|truncate:125}
-                                    {/if}
+                            {foreach $item->repeater_matrix->find("type=bodycopy") as $body}
+                                {if $iterator->first}
+                                    {$body->body|stripHtml|truncate:125}
                                 {/if}
                             {/foreach}
                         </div>
