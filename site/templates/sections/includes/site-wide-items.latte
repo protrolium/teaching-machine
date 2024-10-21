@@ -6,7 +6,7 @@
     {* exclude this page's parent's children *}
     {var $currentCat = $page->parent->children}
     
-    {foreach $pages->get('zones')->find("children.count=0, id!=$currentCat")->shuffle()->slice(0, 6) as $item}
+    {foreach $pages->get('zones')->find("children.count=0, id!=$currentCat")->not($page->id)->shuffle()->slice(0, 6) as $item}
 
         <div class="uk-card uk-margin-small-bottom">
             
