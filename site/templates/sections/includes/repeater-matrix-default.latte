@@ -9,6 +9,11 @@
     {if $item->type == "single_image"}
         <div class="uk-margin-large-top uk-margin-large-bottom">
             <img src="{$item->image->url}" alt="{$item->image->title}" uk-img>
+            {if $item->image->description}
+                <div class="uk-margin-top uk-text-muted uk-text-small">
+                    {$item->image->description}
+                </div>
+            {/if}
         </div>
     {/if}
 
