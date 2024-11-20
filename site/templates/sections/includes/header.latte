@@ -1,4 +1,4 @@
-<header class="uk-width-1-1 uk-position-absolute">
+<header class="uk-width-1-1">
     <div 
         class="uk-animation-slide-right-medium" 
         uk-sticky="sel-target: .uk-navbar-container; start: 500; animation: uk-animation-fade; show-on-up: true;">
@@ -20,7 +20,7 @@
             <p class="uk-flex uk-margin-small-left" style="align-items:center;">
                 {* if on home, display the title, else not *}
                 {if $page->id == 1}
-                    <a class="uk-text-default uk-text-secondary" href="{$pages->get('/')->url}" alt="">
+                    <a class="uk-text-secondary" style="font-size:0.6em;" href="{$pages->get('/')->url}" alt="">
                         {$page->title|upper}
                     </a>
                 {/if}
@@ -46,7 +46,7 @@
         
         {* desktop nav *}
         
-        <nav class="uk-navbar-container uk-navbar-transparent uk-visible@m" uk-navbar>
+        <nav class="uk-position-absolute uk-navbar-container uk-navbar-transparent uk-visible@m" uk-navbar>
             
             <div class="uk-navbar-left">
                 <div 
