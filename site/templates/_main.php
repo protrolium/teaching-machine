@@ -14,19 +14,6 @@
 /** @var RockFrontend $rockfrontend */
 
 $home = $pages->get('/'); // homepage directory
-// $rockfrontend->styles()
-// 	->add("/site/templates/uikit/src/less/uikit.theme.less")
-// 	->add("/site/templates/styles/custom.less")
-// 	->add("/site/templates/styles/oswald.css")
-// 	->addDefaultFolders()
-// 	;
-// $rockfrontend
-// 	->scripts()
-// 	->add("/site/templates/uikit/dist/js/uikit.min.js")
-// 	->add("/site/templates/uikit/dist/js/uikit-icons.min.js", "defer")
-// 	->add("/site/templates/scripts/main.js")
-// 	->add("/site/templates/scripts/consenty.min.js", "defer")
-// 	;
 
 ?>
 <!DOCTYPE html>
