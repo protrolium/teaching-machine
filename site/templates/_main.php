@@ -14,19 +14,19 @@
 /** @var RockFrontend $rockfrontend */
 
 $home = $pages->get('/'); // homepage directory
-$rockfrontend->styles()
-	->add("/site/templates/uikit/src/less/uikit.theme.less")
-	->add("/site/templates/styles/custom.less")
-	->add("/site/templates/styles/oswald.css")
-	->addDefaultFolders()
-	;
-$rockfrontend
-	->scripts()
-	->add("/site/templates/uikit/dist/js/uikit.min.js")
-	->add("/site/templates/uikit/dist/js/uikit-icons.min.js", "defer")
-	->add("/site/templates/scripts/main.js")
-	->add("/site/templates/scripts/consenty.min.js", "defer")
-	;
+// $rockfrontend->styles()
+// 	->add("/site/templates/uikit/src/less/uikit.theme.less")
+// 	->add("/site/templates/styles/custom.less")
+// 	->add("/site/templates/styles/oswald.css")
+// 	->addDefaultFolders()
+// 	;
+// $rockfrontend
+// 	->scripts()
+// 	->add("/site/templates/uikit/dist/js/uikit.min.js")
+// 	->add("/site/templates/uikit/dist/js/uikit-icons.min.js", "defer")
+// 	->add("/site/templates/scripts/main.js")
+// 	->add("/site/templates/scripts/consenty.min.js", "defer")
+// 	;
 
 ?>
 <!DOCTYPE html>
@@ -35,9 +35,13 @@ $rockfrontend
 		
 		<!-- hide our site content -->
 		<!-- <style>html{visibility: hidden;opacity:0;}body.preload * {transition: none !important;animation: none !important;}body.preload .page-content {opacity: 0;visibility: hidden;}</style> -->
-
+		
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		
+		<!-- add our styles and scripts -->
+		<?= $rockfrontend->styleTag($config->urls->templates . "/dst/styles.min.css") ?>
+		<?= $rockfrontend->scriptTag($config->urls->templates . "/dst/scripts.min.js") ?>
+
 		<!-- make sure we get styling on mobile by setting meta viewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?php echo ($page->name == 'home' ? $page->title : $page->title . ' — Teaching Machine'); ?></title>
